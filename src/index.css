@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap'); */
+
+@font-face {
+  font-family: bambino;
+  src: url(./font/Bambino/Bambino.ttf);
+}
+
+@font-face {
+  font-family: bambino;
+  src: url(./font/Bambino/Bambino\ Bold.ttf);
+  font-weight: bold;
+}
+
+
+html {
+  margin: 0;
+  font-family: bambino;
+  /* font-family: 'Gideon Roman', cursive; */
+}
