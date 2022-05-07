@@ -304,7 +304,7 @@ const HowToPlay = () => {
               <StepText flex>10-20 (KM/HR) </StepText>
             </Step1ItemText>
             <Step1ItemText>
-              <StepText flex>1 <Step1Icon src={shan} /> ≈ 4 <Step1Icon src={gst} /> </StepText>
+              <StepText flex>1 <Step1Icon src={shan} /> ≈ 5 <Step1Icon src={gst} /> </StepText>
             </Step1ItemText>
           </Step1Item>
 
@@ -317,7 +317,7 @@ const HowToPlay = () => {
               <StepText flex>12-30 (KM/HR) </StepText>
             </Step1ItemText>
             <Step1ItemText>
-              <StepText flex>1 <Step1Icon src={shan} /> ≈ 4 <Step1Icon src={gst} /> </StepText>
+              <StepText flex>1 <Step1Icon src={shan} /> ≈ 6<Step1Icon src={gst} /> </StepText>
             </Step1ItemText>
           </Step1Item>
 
@@ -330,7 +330,7 @@ const HowToPlay = () => {
               <StepText flex>12-25 (KM/HR) </StepText>
             </Step1ItemText>
             <Step1ItemText>
-              <StepText flex>1 <Step1Icon src={shan} /> ≈ 4 <Step1Icon src={gst} /> </StepText>
+              <StepText flex>1 <Step1Icon src={shan} /> ≈ 4 - 6<Step1Icon src={gst} /> </StepText>
             </Step1ItemText>
           </Step1Item>
         </Step1List>
