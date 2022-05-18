@@ -17,7 +17,7 @@ import i1255 from "images/1255.png"
 import coin from "images/coin.png"
 import tokenomic from "images/tokenomic.png"
 import litep from "images/litep.svg"
-import roadmapMobileZOROBIKE from "images/roadmap-pc-zorobike.png"
+import roadmapMobileZOROBIKE from "images/roadmap-pc.png"
 import zoroburn from "images/zoroburn.png"
 import zoroburnpc from "images/zoroburnpc.png"
 
@@ -599,7 +599,7 @@ const Litepaper = () => {
         <SectionContainer>
           <SectionTitle>ROADMAP</SectionTitle>
         </SectionContainer>
-        <RoadmapImage src={roadmapMobileZOROBIKE} />
+        <img src ={roadmapMobileZOROBIKE} width="100%"/>
       </RoadmapSection>
     </Container>
   )

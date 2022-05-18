@@ -2,7 +2,8 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 import Slider from 'react-slick'
 import { useMediaQuery } from 'react-responsive'
-
+import CHPLAY from '../../images/chplay.png'
+import IOS from '../../images/iosdownload.png'
 import { deviceSize } from 'responsive'
 
 import backgroundImage from 'images/bg.png'
@@ -52,6 +53,7 @@ const BackgroundLogo = styled.img`
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
+  width:50%;
 `
 
 const ForewardSection = styled.div`

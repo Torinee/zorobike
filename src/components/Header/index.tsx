@@ -4,6 +4,10 @@ import { Link, useNavigate } from 'react-router-dom'
 import tw from 'twin.macro'
 
 import logo from "images/logo.png"
+import closeDialog from "images/closeDialog.svg"
+import iosbg from "images/iosbg.svg"
+import googlePlay from "images/googlePlay.svg"
+
 import Portal from 'components/Portal'
 import { useMediaQuery } from 'react-responsive'
 import { deviceSize } from 'responsive'
@@ -17,7 +21,7 @@ const ContainerLeft = styled.div`
 `
 
 const Logo = styled.img`
-  ${tw` max-height[40px] md:max-height[100%] `}
+  ${tw` max-height[40px] md:max-height[50px] `}
 `
 
 const ContainerRight = styled.div`
@@ -51,7 +55,7 @@ const breathe = keyframes`
 `
 
 const DownloadNowText = styled.div`
-  ${tw` px-3 font-bold bg-white text-16 md:text-2xl `}
+  ${tw` px-3 pb-2 font-bold bg-white text-16 md:text-2xl `}
   border: 1px solid black;
   border-radius: 25px;
   animation: 3s linear 0s infinite normal none running ${breathe};
@@ -84,8 +88,39 @@ const MenuItem = styled.li`
   ${tw` text-2xl md:text-4xl mt-10 font-overpass font-bold w-screen overflow-hidden text-center `}
 `
 
+const ShadowWrapper = styled.div`
+  ${tw` w-screen h-screen fixed top-0 left-0 z-100 background-color[#00000085] flex items-center justify-center `}
+`
+
+const ShadowBox = styled.div`
+  ${tw` relative p-5 md:p-14 bg-black max-width[550px] w-full m-5 md:m-10 opacity-90 `}
+`
+
+const ShadowText = styled.div`
+  ${tw` text-xl md:text-3xl text-white mb-5 md:mb-10 text-center font-weight[bold] `}
+`
+
+const ShadowListLink = styled.div`
+  ${tw` flex flex-col md:flex-row justify-around `}
+`
+
+const ShadowLink = styled.a``
+
+const ShadowImageBg = styled.div`
+  ${tw` bg-white border-radius[5px] p-5 m-3 `}
+`
+
+const ShadowImage = styled.img`
+  ${tw` `}
+`
+
+const ShadowClose = styled.img`
+  ${tw` absolute right-0 top-0 cursor-pointer width[35px] md:width[auto] `}
+`
+
 const Header = () => {
   const [show, setShow] = useState(false)
+  const [download, setDownload] = useState(false)
   const navigate = useNavigate()
 
   const isMobile = useMediaQuery({ maxWidth: deviceSize.tablet })
@@ -128,8 +163,12 @@ const Header = () => {
       </ContainerLeft>
 
       <ContainerRight>
-        <DownloadNow>
-          <DownloadNowText>Download Now</DownloadNowText>
+        <DownloadNow onClick={() => setDownload(true)}>
+          <DownloadNowText>
+            <a href='#download'>
+              Download Now
+            </a>
+          </DownloadNowText>
         </DownloadNow>
 
         <MenuToggle onClick={() => handleShowMenu()}>
@@ -138,6 +177,30 @@ const Header = () => {
           <MenuToggleItem width={isMobile ? 30 : 50} />
         </MenuToggle>
       </ContainerRight>
+
+      {download &&
+        <ShadowWrapper>
+          <ShadowBox>
+            <ShadowText>DOWNLOAD NOW</ShadowText>
+            <ShadowListLink>
+              <ShadowLink href="/zorobike.apk">
+                <ShadowImageBg>
+                  <ShadowImage src={iosbg} />
+                </ShadowImageBg>
+              </ShadowLink>
+
+              <ShadowLink href="#">
+                {/* <a href="https://install.appcenter.ms/users/ahihi1125/apps/zorobike/distribution_groups/game" > */}
+                <ShadowImageBg>
+                  <ShadowImage src={googlePlay} />
+                </ShadowImageBg>
+              </ShadowLink>
+            </ShadowListLink>
+
+            <ShadowClose src={closeDialog} onClick={() => setDownload(false)} />
+          </ShadowBox>
+        </ShadowWrapper>
+      }
 
       <Portal>
         <Menu show={show}>
